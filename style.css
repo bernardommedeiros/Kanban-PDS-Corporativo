@@ -39,10 +39,6 @@ li:hover {
     border-radius: 1%;
 }
 
-#intro h2 {
-    margin-bottom: 20px;
-}
-
-#diagram h2 {
+#intro h2, #diagram h2 {
     margin-bottom: 20px;
 }
