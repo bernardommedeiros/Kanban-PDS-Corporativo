@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>KANBAN</title>
+</head>
+<body>
+<header>
+    <h1>KANBAN</h1>
+    <nav>
+        <ol>
+            <li onclick="scrollToSection('intro')">Introdução</li>
+            <li onclick="scrollToSection('diagram')">Diagrama</li>
+            <li onclick="scrollToSection('activities')">Atividades</li>
+            <li onclick="scrollToSection('roles')">Papéis</li>
+            <li onclick="scrollToSection('practices')">Práticas</li>
+        </ol>
+    </nav>
+</header>
+
+<main>
+    <div id="intro">
+        <h2>Introdução</h2>
+        <p>
+            O Kanban é um método de gestão visual de trabalho criado para organizar, acompanhar e melhorar fluxos de atividades de forma contínua. Seu objetivo principal é tornar o trabalho visível, limitar o volume de tarefas em andamento e identificar gargalos no processo, promovendo maior eficiência e previsibilidade.
+            <br><br>
+            Baseado em um quadro visual (físico ou digital), o Kanban representa as etapas do fluxo de trabalho por meio de colunas, onde as atividades avançam conforme são executadas. Ao aplicar princípios como limite de trabalho em progresso (WIP), melhoria contínua e gestão do fluxo, o Kanban ajuda equipes a entregarem valor de forma mais rápida, organizada e transparente, sendo amplamente utilizado em áreas como desenvolvimento de software, operações e gestão administrativa.
+        </p>
+    </div>
+    <div id="diagram">
+        <h2>Diagrama de atividades</h2>
+        <picture>
+            <img src="images/diagram.png">
+        </picture>
+    </div>
+</main>
+</body>
+</html>
