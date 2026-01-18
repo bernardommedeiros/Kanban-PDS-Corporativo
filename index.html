@@ -1,234 +1,191 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
-    <title>KANBAN</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <header
-      class="flex justify-center items-center border-b border-black gap-[10em] py-2"
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KANBAN</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-center gap-32 py-3 bg-white border-b border-slate-300">
+    <h1 class="text-3xl font-bold">KANBAN</h1>
+
+    <nav>
+      <ol class="flex gap-6 font-medium">
+        <li class="cursor-pointer hover:text-blue-400" onclick="scrollToSection('intro')">Introdução</li>
+        <li class="cursor-pointer hover:text-blue-400" onclick="scrollToSection('diagram')">Diagrama</li>
+        <li class="cursor-pointer hover:text-blue-400" onclick="scrollToSection('activities')">Atividades</li>
+        <li class="cursor-pointer hover:text-blue-400" onclick="scrollToSection('roles')">Papéis</li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="flex flex-col w-1/2 mx-auto my-12 gap-10 pt-15">
+    <section id="intro" class="p-6 bg-white border border-slate-100 rounded-2xl shadow-md">
+      <h2 class="mb-4 text-2xl font-bold">Introdução</h2>
+
+      <p class="leading-relaxed text-slate-600">
+        O Kanban é um método de gestão visual de trabalho criado para organizar,
+        acompanhar e melhorar fluxos de atividades de forma contínua. Seu
+        objetivo principal é tornar o trabalho visível, limitar o volume de
+        tarefas em andamento e identificar gargalos no processo, promovendo
+        maior eficiência e previsibilidade.
+        <br /><br />
+        Baseado em um quadro visual, o Kanban representa as etapas do fluxo de
+        trabalho por meio de colunas, onde as atividades avançam conforme são
+        executadas, promovendo transparência e melhoria contínua.
+      </p>
+    </section>
+
+    <section id="diagram" class="p-6 bg-white border border-slate-100 rounded-2xl shadow-md">
+      <h2 class="mb-4 text-2xl font-bold">Diagrama de Atividades</h2>
+
+      <img
+        src="images/diagram.png"
+        alt="Diagrama Kanban"
+        class="mx-auto border rounded-lg border-slate-200"
+      />
+    </section>
+
+    <section id="activities" class="p-6 bg-white border border-slate-100 rounded-2xl shadow-md">
+      <h2 class="mb-6 text-2xl font-bold">Atividades do Fluxo Kanban</h2>
+
+      <ul class="space-y-4 text-slate-700">
+        <li>
+          <p><strong>Nova tarefa:</strong> Uma nova demanda é criada</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Daily (Scrum)</p>
+        </li>
+
+        <li>
+          <p><strong>Análise de prioridade:</strong> Avaliação de impacto e urgência</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Planning Game (XP)</p>
+        </li>
+
+        <li>
+          <p><strong>Implementar:</strong> Desenvolvimento da funcionalidade</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Integração Contínua (XP)</p>
+        </li>
+
+        <li>
+          <p><strong>Testar:</strong> Validação da funcionalidade</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Testes Automatizados (XP)</p>
+        </li>
+
+        <li>
+          <p><strong>Implantar:</strong> Disponibilizar em produção</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Pequenas Entregas (XP)</p>
+        </li>
+
+        <li>
+          <p><strong>Concluído:</strong> Entrega finalizada</p>
+          <p class="text-sm italic text-slate-500">Prática ágil: Transparência (Scrum)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section
+      id="roles"
+      class="p-6 bg-white border border-slate-100 rounded-2xl shadow-md"
     >
-      <h1 class="text-3xl font-bold">KANBAN</h1>
-      <nav>
-        <ol class="flex list-none gap-5">
-          <li
-            class="hover:cursor-pointer hover:text-red-600 transition-colors"
-            onclick="scrollToSection('intro')"
-          >
-            Introdução
-          </li>
-          <li
-            class="hover:cursor-pointer hover:text-red-600 transition-colors"
-            onclick="scrollToSection('diagram')"
-          >
-            Diagrama
-          </li>
-          <li
-            class="hover:cursor-pointer hover:text-red-600 transition-colors"
-            onclick="scrollToSection('activities')"
-          >
-            Atividades
-          </li>
-          <li
-            class="hover:cursor-pointer hover:text-red-600 transition-colors"
-            onclick="scrollToSection('roles')"
-          >
-            Papéis
-          </li>
-          <li
-            class="hover:cursor-pointer hover:text-red-600 transition-colors"
-            onclick="scrollToSection('practices')"
-          >
-            Práticas
-          </li>
-        </ol>
-      </nav>
-    </header>
+      <h2 class="mb-6 text-2xl font-bold text-slate-900">
+        Práticas Kanban por Papel
+      </h2>
 
-    <main
-      class="flex flex-col items-start justify-start w-1/2 mx-auto my-5 gap-5"
-    >
-      <div id="intro">
-        <h2 class="mb-5 text-2xl font-semibold">Introdução</h2>
-        <p class="font-sans">
-          O Kanban é um método de gestão visual de trabalho criado para
-          organizar, acompanhar e melhorar fluxos de atividades de forma
-          contínua. Seu objetivo principal é tornar o trabalho visível, limitar
-          o volume de tarefas em andamento e identificar gargalos no processo,
-          promovendo maior eficiência e previsibilidade.
-          <br /><br />
-          Baseado em um quadro visual (físico ou digital), o Kanban representa
-          as etapas do fluxo de trabalho por meio de colunas, onde as atividades
-          avançam conforme são executadas. Ao aplicar princípios como limite de
-          trabalho em progresso (WIP), melhoria contínua e gestão do fluxo, o
-          Kanban ajuda equipes a entregarem valor de forma mais rápida,
-          organizada e transparente, sendo amplamente utilizado em áreas como
-          desenvolvimento de software, operações e gestão administrativa.
-        </p>
-      </div>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            Coach
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Facilitador de Melhoria Contínua</h3>
+          <p class="mt-3 text-slate-700">
+            Atua como agente de mudança, promovendo a evolução do sistema Kanban e a melhoria contínua do fluxo.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Facilitar práticas de melhoria contínua</li>
+            <li>• Incentivar cultura de Kaizen</li>
+            <li>• Apoiar times na adoção do Kanban</li>
+          </ul>
+        </div>
 
-      <div id="diagram">
-        <h2 class="mb-5 text-2xl font-semibold">Diagrama de atividades</h2>
-        <picture>
-          <img
-            src="images/diagram.png"
-            class="border border-black rounded-sm"
-          />
-        </picture>
-      </div>
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            Tech Leader
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Guardião Técnico do Fluxo</h3>
+          <p class="mt-3 text-slate-700">
+            Garante que decisões técnicas sustentem um fluxo estável, previsível e com qualidade.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Definir políticas técnicas explícitas</li>
+            <li>• Reduzir gargalos técnicos</li>
+            <li>• Garantir qualidade e sustentabilidade do código</li>
+          </ul>
+        </div>
 
-      <div id="activities">
-        <h2 class="mb-5 text-2xl font-semibold">Atividades do Fluxo Kanban</h2>
-        <ul class="list-disc pl-6 space-y-2 font-sans">
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Nova tarefa:</span> Uma nova demanda é
-                criada
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Daily
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Análise de prioridade:</span> Avalia-se
-                a importância, urgência e impacto da tarefa.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Planning Game
-                <span class="text-blue-700">(XP)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Adição ao backlog:</span> A tarefa é
-                registrada no backlog.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Refinamento de backlog
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Prioridade na sprint?</span> Decide se a
-                tarefa entra na sprint atual.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Refinamento de backlog
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Mover para “A fazer”:</span> A tarefa é
-                preparada para execução.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Refinamento de backlog
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Implementar:</span> O desenvolvimento da
-                tarefa é realizado.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Integração contínua
-                <span class="text-blue-700">(XP)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Testar:</span> A funcionalidade é
-                validada por testes.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Testes automatizados (Integração contínua)
-                <span class="text-blue-700">(XP)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Validado?</span> Verifica se passou nos
-                testes.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Testes automatizados (Integração contínua)
-                <span class="text-blue-700">(XP)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Corrigir:</span> Ajustes são feitos nos
-                erros encontrados, retornando depois para nova validação.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Adaptação
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Implantação:</span> A funcionalidade é
-                colocada em produção ou ambiente final.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Pequenas entregas
-                <span class="text-blue-700">(XP)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Feedback esperado?</span> Avalia se o
-                que foi entregue está de acordo com os requisitos do cliente
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Testes do cliente, Transparencia
-                <span class="text-blue-700">(XP, Scrum)</span>
-              </p>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col gap-1">
-              <p>
-                <span class="font-bold">Mover para “Concluído”:</span> A tarefa
-                é oficialmente encerrada.
-              </p>
-              <p class="italic text-sm text-gray-600">
-                Prática ágil: Refinamento de backlog
-                <span class="text-blue-700">(Scrum)</span>
-              </p>
-            </div>
-          </li>
-        </ul>
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            Devs
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Construtores de Valor</h3>
+          <p class="mt-3 text-slate-700">
+            Executam o trabalho respeitando limites de WIP, colaboração e foco na entrega contínua de valor.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Puxar trabalho conforme capacidade</li>
+            <li>• Respeitar limites de WIP</li>
+            <li>• Colaborar para desbloquear tarefas</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            QA
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Guardião da Qualidade</h3>
+          <p class="mt-3 text-slate-700">
+            Atua preventivamente para garantir que defeitos não avancem no fluxo.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Validar critérios de aceite</li>
+            <li>• Executar testes contínuos</li>
+            <li>• Reduzir retrabalho e falhas em produção</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            Stakeholders
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Direcionadores de Valor</h3>
+          <p class="mt-3 text-slate-700">
+            Representam os interesses do negócio e avaliam se o valor entregue atende às expectativas.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Definir objetivos estratégicos</li>
+            <li>• Avaliar métricas de resultado</li>
+            <li>• Fornecer feedback contínuo</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow">
+          <span class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-200 text-slate-900">
+            Product Owner
+          </span>
+          <h3 class="mt-3 text-xl font-bold">Gestor de Valor e Prioridades</h3>
+          <p class="mt-3 text-slate-700">
+            Responsável por maximizar o valor entregue, equilibrando prioridades de negócio com a capacidade do sistema.
+          </p>
+          <ul class="mt-4 space-y-1 text-sm text-slate-800">
+            <li>• Priorizar demandas com base em valor</li>
+            <li>• Alinhar expectativas de negócio</li>
+            <li>• Apoiar decisões baseadas em métricas de fluxo</li>
+          </ul>
+        </div>
       </div>
-    </main>
-  </body>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
